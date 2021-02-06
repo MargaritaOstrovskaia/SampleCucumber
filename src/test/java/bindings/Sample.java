@@ -1,12 +1,10 @@
 package bindings;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import gherkin.lexer.He;
 import org.assertj.core.api.Assertions;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -22,6 +20,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Sample {
     private WebDriver driver;
+
     @Before
     public void beforeScenario()
     {
@@ -168,7 +167,7 @@ public class Sample {
 
     @When("^I select two elements \"([^\"]*)\" and \"([^\"]*)\"$")
     public void selectTwoElements(String first, String second) {
-        Select select = new Select(driver.findElement(By.xpath(Helper.carMakeXpath)));
+        //Select select = new Select(driver.findElement(By.xpath(Helper.carMakeXpath)));
 
         String firstPath = String.format(Helper.carMakeXpath + "/option[@value='%1$s']", first);
         String secondPath = String.format(Helper.carMakeXpath + "/option[@value='%1$s']", second);
